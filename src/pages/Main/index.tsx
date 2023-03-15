@@ -19,19 +19,20 @@ const Main = () => {
     const extensions = ["bat", "cmd", "com", "cpl", "exe", "scr", "js"];
 
     const [customExtension, onChangeCustomExtension] = useInput<string>('');
-    // const [getAllResult, setGetAllResult] = useState(() => window.localStorage.getItem("aa"));
     const [isClicked, setClick] = useState(false);
 
     const onClickAddCustomExtension = useCallback(async (e: any) => {
         await axios.post(`http://localhost:8080/room/2`,
-            {"extensionName": customExtension, "type": "custom"}).then(r => console.log("success to add"));
+            {"extensionName": customExtension, "type": "custom"}).then(r => {
+                console.log("successfully added");
+        });
         setClick(true);
     }, [customExtension]);
 
     const getAllCustomExtensions = async () => {
         await axios.get(`http://localhost:8080/room/2`)
             .then(response => {
-                window.localStorage.setItem("aa", JSON.stringify(response.data));
+                window.localStorage.setItem("customList", JSON.stringify(response.data));
             })
             .catch(error => {
                 console.log(error);

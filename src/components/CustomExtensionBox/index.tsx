@@ -13,17 +13,16 @@ const CustomExtensionBox = () => {
 
         await axios.delete(`http://localhost:8080/room/2/extension/${extensionName}`)
             .then(r => {
-                getAllCustomExtensions();
                 setClick(true);
+                getAllCustomExtensions();
             });
-
         setClick(false);
-    },[clicked]);
+    },[]);
 
     const getAllCustomExtensions = async () => {
         await axios.get(`http://localhost:8080/room/2`)
         .then(response => {
-            window.localStorage.setItem("aa", JSON.stringify(response.data));
+            window.localStorage.setItem("customList", JSON.stringify(response.data));
         })
         .catch(error => {
             console.log(error);
@@ -52,25 +51,34 @@ const CustomExtensionBox = () => {
     }
 
     function getParsedData() {
-        const parsedJson:any = window.localStorage.getItem("aa");
+        const parsedJson:any = window.localStorage.getItem("customList");
         return JSON.parse(parsedJson);
     }
 
     useEffect(() => {
-        if (window.localStorage.getItem("aa")) {
+        if (window.localStorage.getItem("customList")) {
             renderAddedComponents();
         }
     }, [clicked]);
 
     return useObserver(() => (
-        <>{
-            window.localStorage.getItem("aa") &&
-                <MainBox>
-                    <>{getCustomExtensionSize()}/200</> <br/>
-                    <Content>
-                        {renderAddedComponents()}
-                    </Content>
-                </MainBox>
+        <>
+            {
+                window.localStorage.getItem("customList") &&
+                    <MainBox>
+                        <>{getCustomExtensionSize()}/200</> <br/>
+                        <Content>
+                            {renderAddedComponents()}
+                        </Content>
+                    </MainBox>
+            }
+            {
+                !window.localStorage.getItem("customList") &&
+                    <MainBox>
+                        <>0/200</> <br/>
+                        <Content>
+                        </Content>
+                    </MainBox>
             }
         </>
     ));

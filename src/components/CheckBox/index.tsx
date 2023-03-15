@@ -7,7 +7,7 @@ const CheckBox = (props:any) => {
         lab: props.label
     }));
 
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(window.localStorage.getItem(`${state.lab}`) === 'true');
     const [doit, setDoIt] = useState("yet");
 
     const handleCheck = (event:any) => {
@@ -32,21 +32,24 @@ const CheckBox = (props:any) => {
     }, [isChecked]);
 
     const addFixExtension = async () => {
-        console.log("call add API");
         await axios.post(`http://localhost:8080/room/2`,
-            {"extensionName": state.lab, "type": "fixed"}).then(r => console.log("success to add"));
+            {"extensionName": state.lab, "type": "fixed"})
+        .then(response => {
+            console.log("successfully added");
+            window.localStorage.setItem(`${state.lab}`, "true");
+        })
     }
-
     const deleteFixExtension = async () => {
-        console.log("call delete API");
-
         await axios.delete(`http://localhost:8080/room/2/extension/${state.lab}`)
-            .then(r => console.log("success to delete"));
+            .then(response => {
+                console.log("successfully deleted");
+                window.localStorage.setItem(`${state.lab}`, "false");
+            });
     }
 
     return useObserver(() => (
         <>
-            <input type="checkbox" checked={isChecked} onChange={handleCheck} value={state.lab}/> <label>{state.lab}</label>&nbsp;&nbsp;
+            <> < input type="checkbox" checked={isChecked} onChange={handleCheck} value={state.lab}/> <label>{state.lab}</label>&nbsp;&nbsp;</>
         </>
     ));
 }
