@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/flow-front/static/js/main.f2eaa1fe.js",
+    "static/js/480.c35d4cee.chunk.js": "/flow-front/static/js/480.c35d4cee.chunk.js",
+    "static/js/975.9e357d2a.chunk.js": "/flow-front/static/js/975.9e357d2a.chunk.js",
+    "index.html": "/flow-front/index.html",
+    "main.f2eaa1fe.js.map": "/flow-front/static/js/main.f2eaa1fe.js.map",
+    "480.c35d4cee.chunk.js.map": "/flow-front/static/js/480.c35d4cee.chunk.js.map",
+    "975.9e357d2a.chunk.js.map": "/flow-front/static/js/975.9e357d2a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f2eaa1fe.js"
+  ]
+}
