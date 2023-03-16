@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/flow-front/static/js/main.9ede987f.js",
-    "static/js/480.c9f25143.chunk.js": "/flow-front/static/js/480.c9f25143.chunk.js",
+    "main.js": "/flow-front/static/js/main.48fde143.js",
+    "static/js/480.2d0d748a.chunk.js": "/flow-front/static/js/480.2d0d748a.chunk.js",
     "static/js/975.9e357d2a.chunk.js": "/flow-front/static/js/975.9e357d2a.chunk.js",
     "index.html": "/flow-front/index.html",
-    "main.9ede987f.js.map": "/flow-front/static/js/main.9ede987f.js.map",
-    "480.c9f25143.chunk.js.map": "/flow-front/static/js/480.c9f25143.chunk.js.map",
+    "main.48fde143.js.map": "/flow-front/static/js/main.48fde143.js.map",
+    "480.2d0d748a.chunk.js.map": "/flow-front/static/js/480.2d0d748a.chunk.js.map",
     "975.9e357d2a.chunk.js.map": "/flow-front/static/js/975.9e357d2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.9ede987f.js"
+    "static/js/main.48fde143.js"
   ]
 }
