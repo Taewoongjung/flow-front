@@ -11,7 +11,7 @@ const CustomExtensionBox = () => {
         console.log("call delete API");
         console.log("name = ", extensionName);
 
-        await axios.delete(`http://localhost:7777/room/2/extension/${extensionName}`)
+        await axios.delete(`http://118.67.133.152:7777/room/2/extension/${extensionName}`)
             .then(r => {
                 setClick(true);
                 getAllCustomExtensions();
@@ -20,7 +20,7 @@ const CustomExtensionBox = () => {
     },[]);
 
     const getAllCustomExtensions = async () => {
-        await axios.get(`http://localhost:7777/room/2`)
+        await axios.get(`http://118.67.133.152:7777/room/2`)
         .then(response => {
             window.localStorage.setItem("customList", JSON.stringify(response.data));
         })
