@@ -4,7 +4,7 @@ import {BrowserRouter, HashRouter} from 'react-router-dom';
 import App from './layouts/App';
 
 ReactDOM.render(
-    <HashRouter basename={"https://taewoongjung.github.io/flow-front/"}>
+    <HashRouter>
         <App />
     </HashRouter>,
     document.getElementById('root')
