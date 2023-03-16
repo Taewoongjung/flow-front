@@ -2,6 +2,7 @@
   "name": "flow-front",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@emotion/styled": "^11.10.6",
     "@loadable/component": "^5.15.3",
@@ -55,6 +56,5 @@
   "devDependencies": {
     "@types/loadable__component": "^5.13.4",
     "@types/react-router-dom": "^5.3.3"
-  },
-  "homepage": "https://taewoongjung.github.io/flow-front/"
+  }
 }
