@@ -2,7 +2,7 @@
   "name": "flow-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://taewoongjung.github.io/flow-front/",
   "dependencies": {
     "@emotion/styled": "^11.10.6",
     "@loadable/component": "^5.15.3",
