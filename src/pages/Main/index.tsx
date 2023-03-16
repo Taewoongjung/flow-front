@@ -22,7 +22,7 @@ const Main = () => {
     const [isClicked, setClick] = useState(false);
 
     const onClickAddCustomExtension = useCallback(async (e: any) => {
-        await axios.post(`http://172.20.10.9:8080/room/2`,
+        await axios.post(`http://localhost:8080/room/2`,
             {"extensionName": customExtension, "type": "custom"}).then(r => {
                 console.log("successfully added");
         });
@@ -30,7 +30,7 @@ const Main = () => {
     }, [customExtension]);
 
     const getAllCustomExtensions = async () => {
-        await axios.get(`http://172.20.10.9:8080/room/2`)
+        await axios.get(`http://localhost:8080/room/2`)
             .then(response => {
                 window.localStorage.setItem("customList", JSON.stringify(response.data));
             })
