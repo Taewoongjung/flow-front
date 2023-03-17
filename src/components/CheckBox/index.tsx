@@ -32,7 +32,7 @@ const CheckBox = (props:any) => {
     }, [isChecked]);
 
     const addFixExtension = async () => {
-        await axios.post(`http://localhost:8080/room/2`,
+        await axios.post(`http://http://118.67.133.152/room/2`,
             {"extensionName": state.lab, "type": "fixed"})
         .then(response => {
             console.log("successfully added");
@@ -40,7 +40,7 @@ const CheckBox = (props:any) => {
         })
     }
     const deleteFixExtension = async () => {
-        await axios.delete(`http://localhost:8080/room/2/extension/${state.lab}`)
+        await axios.delete(`http://118.67.133.152/room/2/extension/${state.lab}`)
             .then(response => {
                 console.log("successfully deleted");
                 window.localStorage.setItem(`${state.lab}`, "false");

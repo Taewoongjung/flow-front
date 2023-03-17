@@ -9,9 +9,7 @@ const CustomExtensionBox = () => {
 
     const onClickButton = useCallback(async (extensionName:any) => {
         console.log("call delete API");
-        console.log("name = ", extensionName);
-
-        await axios.delete(`http://localhost:8080/room/2/extension/${extensionName}`)
+        await axios.delete(`http://http://118.67.133.152/room/2/extension/${extensionName}`)
             .then(r => {
                 setClick(true);
             });
@@ -20,7 +18,7 @@ const CustomExtensionBox = () => {
     },[]);
 
     const getAllCustomExtensions = async () => {
-        await axios.get(`http://localhost:8080/room/2`)
+        await axios.get(`http://http://118.67.133.152/room/2`)
         .then(response => {
             window.localStorage.setItem("customList", JSON.stringify(response.data));
         })
