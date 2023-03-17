@@ -4,6 +4,8 @@
 
 <br>
 
+배포 도메인: http://flow-twj.store/main
+
 백앤드: https://github.com/Taewoongjung/flow
 
 <br>
