@@ -30,7 +30,7 @@ const Main = () => {
     }, [customExtension]);
 
     const getAllCustomExtensions = async () => {
-        await axios.get(`http://118.67.133.152:7777/room/2`)
+        await axios.get(`http://118.67.133.152/room/2`)
             .then(response => {
                 window.localStorage.setItem("customList", JSON.stringify(response.data));
             })
