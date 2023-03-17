@@ -22,7 +22,7 @@ const Main = () => {
     const [isClicked, setClick] = useState(false);
 
     const onClickAddCustomExtension = useCallback(async (e: any) => {
-        await axios.post(`http://118.67.133.152//room/2`,
+        await axios.post(`http://118.67.133.152/room/2`,
             {"extensionName": customExtension, "type": "custom"}).then(r => {
                 console.log("successfully added");
         });
